@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="/main.js" defer></script>
+	<title>Demo title here</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,700;1,900&display=swap" rel="stylesheet" />
+	<link href="new1.css" rel="stylesheet" />
+	<style>
+	.parallax {
+		/* overflow: hidden; */
+		position: relative;
+		z-index: 0;
+		min-height: 75vh;
+		display: grid;
+		grid-template-areas: "stack";
+	}
+	
+	.parallax > * {
+		grid-area: stack;
+		animation: parallax linear;
+		animation-timeline: scroll();
+	}
+	
+	.parallax > img {
+		width: 100%;
+	}
+	
+	.primary-header,
+	.hero {
+		--parallax-speed: 10;
+		z-index: 10;
+	}
+	
+	.parallax__bg {
+		--parallax-speed: -10;
+		z-index: 1;
+		min-height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	
+	.parallax__dust {
+		--parallax-speed: -20;
+		z-index: 2;
+	}
+	
+	.parallax__luna {
+		--parallax-speed: 50;
+		z-index: 3;
+	}
+	
+	.parallax__manny {
+		--parallax-speed: 30;
+		z-index: 4;
+	}
+	
+	.parallax__jax {
+		--parallax-speed: 10;
+		z-index: 5;
+	}
+	
+	.parallax__rays {
+		--parallax-speed: 50;
+		z-index: 3;
+	}
+	
+	.parallax__foreground-front,
+	.parallax__foreground-back {
+		z-index: 999;
+		align-self: end;
+	}
+	
+	.parallax__foreground-back {
+		transform: scaleY(1.2);
+		transform-origin: bottom;
+		mix-blend-mode: hard-light;
+	}
+	
+	.main-content {
+		position: relative;
+		/* z-index: 1; */
+		background: hsl(238, 100%, 6%);
+		padding-block: 6rem;
+	}
+	
+	@keyframes parallax {
+		to {
+			transform: translateY(calc(var(--parallax-speed) * 200px));
+		}
+	}
+	/* general styling */
+	
+	html {
+		color-scheme: dark;
+	}
+	
+	body {
+		margin: 0;
+		font-family: "Rubik", sans-serif;
+		font-size: 1.25rem;
+		font-weight: 700;
+		/* for demo only */
+		text-transform: uppercase;
+		/* for demo only */
+		min-height: 300vh;
+		/* for demo only */
+	}
+	
+	img {
+		display: block;
+		max-width: 100%;
+	}
+	
+	.wrapper {
+		width: min(65rem, 100% - 4rem);
+		margin-inline: auto;
+	}
+	
+	.flex-group {
+		display: flex;
+		gap: 1rem;
+	}
+	
+	.button {
+		font: inherit;
+		font-style: italic;
+		text-transform: uppercase;
+		background: hsl(279, 75%, 59%);
+		padding: 1em 2em;
+		border: 0;
+		border-radius: 0.125em;
+	}
+	
+	.primary-header {
+		padding-block: 2rem;
+	}
+	
+	.primary-header__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.primary-nav ul {
+		flex: 1;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 1rem;
+		justify-content: space-between;
+	}
+	
+	.primary-nav a {
+		color: white;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	
+	.logo {
+		max-width: 100px;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			inset: -3rem;
+			z-index: -1;
+			background: radial-gradient(hsl(0 0% 100% / 0.5), transparent 70%);
+		}
+	}
+	
+	.hero {
+		margin-block-start: max(20vh, 8rem);
+	}
+	
+	.hero__title {
+		font-size: 6rem;
+		max-width: 10ch;
+		line-height: 1;
+		font-style: italic;
+		font-weight: 900;
+		position: relative;
+		> span {
+			font-style: normal;
+			font-size: 0.5em;
+			display: block;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: black;
+			z-index: -1;
+			scale: 2;
+			opacity: 0.5;
+			filter: blur(5rem);
+			translate: -50%;
+		}
+	}
+	</style>
+</head>
+
+<body>
+	<div class="parallax">
+		<header class="primary-header">
+			<div class="wrapper">
+				<div class="primary-header__inner">
+					<div class="logo"> <img src="assets/Logo.webp" alt="" /> </div>
+					<nav class="primary-nav">
+						<ul role="list">
+							<li><a href="#">Why join us</a></li>
+							<li><a href="#">The founders</a></li>
+							<li><a href="#">Beta info</a></li>
+						</ul>
+					</nav>
+					<div class="flex-group" aria-label="social links"> <a href="#">X</a> <a href="#">IG</a> <a href="#">YT</a> </div>
+				</div>
+			</div>
+		</header>
+		<div class="hero">
+			<div class="wrapper">
+				<h1 class="hero__title">
+            <span>Gear up!</span> We're going monster hunting!
+          </h1>
+				<button class="button">Sign up for beta</button>
+			</div>
+		</div> <img class="parallax__bg" src="assets/bg.jpg" alt="" /> <img class="parallax__dust" src="assets/dust.webp" alt="" /> <img class="parallax__foreground-back" src="assets/foreground-back.webp" alt="" /> <img class="parallax__foreground-front" src="assets/foreground-front.webp" alt="" /> <img class="parallax__jax" src="assets/jax.webp" alt="" /> <img class="parallax__luna" src="assets/luna.webp" alt="" /> <img class="parallax__manny" src="assets/manny.webp" alt="" /> <img class="parallax__rays" src="assets/rays.webp" alt="" /> </div>
+	<main class="main-content">
+		<div class="wrapper">
+			<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum aspernatur nesciunt rem, officiis atque deserunt architecto excepturi ducimus consectetur suscipit dolore sed tempora, assumenda corporis eius quasi quas pariatur. </p>
+			<p> Sed minus alias quidem error fuga sint temporibus, accusamus totam! Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia pariatur deleniti aspernatur, assumenda numquam blanditiis cumque voluptatem deserunt nesciunt, ea atque! </p>
+			<br>
+			<div class="slider">
+				<div class="container">
+					<div class="slide x"></div>
+					<div class="slide y"></div>
+					<div class="slide z"></div>
+				</div>
+				<div class="shadow"></div>
+			</div>
+			<br>
+			<br>
+			<div class="card">
+				<div class="photo"></div>
+				<h2>STEPS</h2>
+				<p>THIS WEEK</p>
+				<div class="chart">
+					<div class="bar bar1"><span>20,000</span></div>
+					<div class="bar bar2"><span>10,000</span></div>
+					<div class="bar bar3"><span>15,000</span></div>
+					<div class="bar bar4"><span>24,000</span></div>
+					<div class="bar bar5"><span>7,000</span></div>
+					<div class="bar bar6"><span>7,000</span></div>
+					<div class="bar bar7"><span>10,000</span></div>
+				</div>
+				<h3>93,000</h3> </div>
+			<br>
+			<br>
+			<div class='reflection-container'>
+				<a class='reflection-grid-cell reflection-grid-cell-1' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-2' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-3' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-4' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-5' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-6' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-7' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-8' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-9' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-10' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-11' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-12' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-13' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-14' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-15' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-16' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-17' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-18' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-19' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-20' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-21' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-22' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-23' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-24' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-25' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-26' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-27' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-28' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-29' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-30' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-31' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-32' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-33' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-34' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-35' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-36' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-37' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-38' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-39' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-40' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-41' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-42' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-43' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-44' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-45' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-46' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-47' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-48' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-49' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-50' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-51' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-52' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-53' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-54' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-55' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-56' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-57' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-58' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-59' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-60' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-61' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-62' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-63' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-64' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-65' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-66' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-67' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-68' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-69' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-70' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-71' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-72' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-73' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-74' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-75' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-76' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-77' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-78' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-79' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-80' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-81' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-82' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-83' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-84' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-85' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-86' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-87' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-88' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-89' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-90' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-91' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-92' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-93' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-94' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-95' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-96' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-97' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-98' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-99' href='#'></a>
+				<a class='reflection-grid-cell reflection-grid-cell-100' href='#'></a>
+				<div class='reflection-content'></div>
+			</div>
+			</div>
+            <br>
+            <br>
+            <br>
+            <br>
+        <div class="box">
+            <span style="--i:1;"><img src="apple2.jpeg"></span>
+            <span style="--i:2;"><img src="apple3.jpg"></span>
+            <span style="--i:3;"><img src="apple6.jpg"></span>
+            <span style="--i:4;"><img src="apple3.jpg"></span>
+            <span style="--i:5;"><img src="apple3.jpg"></span>
+            <span style="--i:6;"><img src="apple3.jpg"></span>
+            <span style="--i:7;"><img src="apple3.jpg"></span>
+            <span style="--i:8;"><img src="apple3.jpg"></span>
+        </div>
+	</main>
+</body>
+<script>
+"use strict"
+let body = document.body
+let tilted = false
+let toggleTilt = function() {
+	tilted = !tilted
+	if(tilted) body.classList.add("details")
+	else body.classList.remove("details")
+}
+body.addEventListener("click", toggleTilt)
+body.addEventListener("touchstart", toggleTilt)
+if(location.pathname.match(/fullcpgrid/i)) setTimeout(toggleTilt, 1000)
+</script>
+
+</html>

@@ -1,0 +1,2044 @@
+.slider {
+	z-index: 3;
+}
+
+.card {
+	z-index: 2;
+}
+
+.slider {
+	top: 50px;
+}
+
+.card {
+	top: 250px;
+}
+
+.slider {
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	-webkit-perspective: 600px;
+	perspective: 600px;
+}
+
+.slider * {
+	-webkit-transition: all 1s cubic-bezier(0.5, -0.75, 0.2, 1.5);
+	transition: all 1s cubic-bezier(0.5, -0.75, 0.2, 1.5);
+}
+
+.container {
+	width: inherit;
+	height: inherit;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateY(0deg) rotateX(0deg);
+	transform: rotateY(0deg) rotateX(0deg);
+}
+
+.slide, .slide:after, .slide:before {
+	display: block;
+	width: inherit;
+	height: inherit;
+	background: url('https://cdn.dribbble.com/users/5031/screenshots/7008431/dribbble.png');
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	background-size: cover;
+	background-position: center;
+}
+
+.slide.x {
+	-webkit-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+}
+
+.slide.x:after {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/730703/screenshots/6988911/elenidebo-thisiscolossal-theroad-forchicagodesignmuseum.jpg');
+	-webkit-transform: translateZ(100px) rotateZ(-90deg);
+	transform: translateZ(100px) rotateZ(-90deg);
+}
+
+.slide.x:before {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/329207/screenshots/6220354/bemocs_geneseo_sailing.jpg');
+	-webkit-transform: translateZ(-100px) rotateZ(-90deg);
+	transform: translateZ(-100px) rotateZ(-90deg);
+}
+
+.slide.y {
+	-webkit-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.slide.y:after {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/63407/screenshots/5705689/dribbble_moonlight_2x.png');
+	-webkit-transform: translateZ(100px) scale(-1);
+	transform: translateZ(100px) scale(-1);
+}
+
+.slide.y:before {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/1355613/screenshots/6441984/landscape_2x.jpg');
+	-webkit-transform: translateZ(-100px);
+	transform: translateZ(-100px);
+}
+
+.slide.z {
+	-webkit-transform: rotateX(0);
+	transform: rotateX(0);
+}
+
+.slide.z:after {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/3178178/screenshots/7013817/the_caravan_by_patryk_wojciechowicz_2x.png');
+	-webkit-transform: translateZ(100px);
+	transform: translateZ(100px);
+}
+
+.slide.z:before {
+	content: '';
+	background-image: url('https://cdn.dribbble.com/users/1361661/screenshots/6673317/music_girl.png');
+	-webkit-transform: translateZ(-100px);
+	transform: translateZ(-100px);
+}
+
+.container {
+	-webkit-animation: rotate 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+	animation: rotate 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+
+@-webkit-keyframes rotate {
+	0%, 10% {
+		-webkit-transform: rotateY(0deg) rotateX(0deg);
+		transform: rotateY(0deg) rotateX(0deg);
+	}
+
+	15%, 20% {
+		-webkit-transform: rotateY(180deg) rotateX(0deg);
+		transform: rotateY(180deg) rotateX(0deg);
+	}
+
+	25%, 35% {
+		-webkit-transform: rotateY(180deg) rotateX(270deg);
+		transform: rotateY(180deg) rotateX(270deg);
+	}
+
+	40%, 50% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+		transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	55%, 65% {
+		-webkit-transform: rotateY(-90deg) rotateX(90deg);
+		transform: rotateY(-90deg) rotateX(90deg);
+	}
+
+	70%, 80% {
+		-webkit-transform: rotateY(90deg) rotateX(90deg);
+		transform: rotateY(90deg) rotateX(90deg);
+	}
+
+	90%, 95% {
+		-webkit-transform: rotateY(0deg) rotateX(90deg);
+		transform: rotateY(0deg) rotateX(90deg);
+	}
+}
+
+@keyframes rotate {
+	0%, 10% {
+		-webkit-transform: rotateY(0deg) rotateX(0deg);
+		transform: rotateY(0deg) rotateX(0deg);
+	}
+
+	15%, 20% {
+		-webkit-transform: rotateY(180deg) rotateX(0deg);
+		transform: rotateY(180deg) rotateX(0deg);
+	}
+
+	25%, 35% {
+		-webkit-transform: rotateY(180deg) rotateX(270deg);
+		transform: rotateY(180deg) rotateX(270deg);
+	}
+
+	40%, 50% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+		transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	55%, 65% {
+		-webkit-transform: rotateY(-90deg) rotateX(90deg);
+		transform: rotateY(-90deg) rotateX(90deg);
+	}
+
+	70%, 80% {
+		-webkit-transform: rotateY(90deg) rotateX(90deg);
+		transform: rotateY(90deg) rotateX(90deg);
+	}
+
+	90%, 95% {
+		-webkit-transform: rotateY(0deg) rotateX(90deg);
+		transform: rotateY(0deg) rotateX(90deg);
+	}
+}
+
+.shadow {
+	display: block;
+	width: 200px;
+	height: 200px;
+	background: rgba(0,0,0,0.75);
+	position: absolute;
+	top: 60%;
+	-webkit-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+	z-index: -1;
+	-webkit-filter: blur(20px);
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="20" /></filter></svg>#filter');
+	-webkit-filter: blur(20px);
+	filter: blur(20px);
+	left: 0;
+	right: 0;
+	margin: auto;
+	-webkit-animation: rotateShadow 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+	animation: rotateShadow 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+
+@-webkit-keyframes rotateShadow {
+	0%, 10% {
+		-webkit-transform: rotateY(0deg) rotateX(90deg);
+	}
+
+	15%, 20% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	20.1%, 20.9% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg) translatez(5px);
+	}
+
+	25%, 35% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	35.1%, 35.9% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg) translatez(-5px);
+	}
+
+	40%, 50% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	55%, 65% {
+		-webkit-transform: rotateY(0deg) rotateX(90deg);
+	}
+
+	70%, 80% {
+		-webkit-transform: rotateY(180deg) rotateX(90deg);
+	}
+
+	90%, 99% {
+		-webkit-transform: rotateY(90deg) rotateX(90deg);
+	}
+
+	99.1%, 99.9% {
+		-webkit-transform: rotateY(90deg) rotateX(90deg) translatez(-5px);
+	}
+}
+
+.credit {
+	position: fixed;
+	bottom: 22px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 200px;
+	text-align: center;
+}
+
+.credit a {
+	font-weight: 900;
+	color: blue;
+	text-decoration: none;
+	-webkit-transition: all .15s linear;
+	transition: all .15s linear;
+	background: url(https://dl.dropboxusercontent.com/u/12646264/assets/open-in-new-window-icon.png)no-repeat right;
+	background-size: 12px;
+	padding-right: 20px !important;
+	-filter: invert(1);
+	-webkit-filter: invert(1);
+	-moz--filter: invert(1);
+	-o--filter: invert(1);
+}
+
+.credit a:hover {
+	color: tomato;
+}
+
+.small {
+	font-size: smaller;
+	opacity: .75;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Asar|Oxygen");
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	
+	perspective: 1500px;
+	font-family: "Asar", serif;
+	user-select: none;
+}
+
+.card {
+	background-color: black;
+	width: 250px;
+	height: 300px;
+	border-radius: 10px;
+	perspective: 1500;
+	margin-bottom: 50px;
+	transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transform-style: preserve-3d;
+	box-shadow: 5px 5px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-height: 600px) {
+	.card {
+		width: 400px;
+		height: 550px;
+	}
+}
+
+.card h2, .card h3, .card P {
+	transform: translateZ(2px);
+	color: white;
+	font-size: 30px;
+	line-height: 30px;
+	margin: 0;
+	font-weight: 300;
+	padding: 0;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+@media (min-height: 600px) {
+	.card h2, .card h3, .card P {
+		font-size: 40px;
+		line-height: 40px;
+	}
+}
+
+.card h2 {
+	margin: 20px 0 0 0;
+}
+
+.card h3 {
+	margin: 10px 0 40px 0;
+}
+
+@media (min-height: 600px) {
+	.card h3 {
+		margin: 20px 0 40px 0;
+	}
+}
+
+.card P {
+	margin: 0px 0 30px 0;
+	font-size: 16px;
+}
+
+@media (min-height: 600px) {
+	.card P {
+		margin: 0px 0 40px 0;
+		font-size: 21px;
+	}
+}
+
+.card .chart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform-style: preserve-3d;
+	transform: translateZ(2px);
+	transition: transform 0.5s ease-in-out;
+}
+
+.card .photo {
+	position: absolute;
+	transform: translateZ(1px);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("https://source.unsplash.com/kpAXYoXSeuY/600x600") no-repeat center center;
+	background-size: cover;
+	border-radius: 10px;
+	transition: transform 0.5s ease-in-out;
+	overflow: hidden;
+}
+
+.card .photo:after {
+	position: absolute;
+	content: " ";
+	display: block;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: background-color 0.5s ease-in-out;
+}
+
+.card .bar {
+	will-change: height;
+	width: 15px;
+	height: 1px;
+	background-color: white;
+	transform: translateX(-7.5px) rotateX(-90deg) rotateY(-45deg);
+	transform-origin: 100% 100%;
+	transition: height 0.5s ease-in-out, margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+	transform-style: preserve-3d;
+	margin: 6px;
+	position: relative;
+	background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 0%, #a0d8ef 100%);
+}
+
+@media (min-height: 600px) {
+	.card .bar {
+		margin: 10px;
+		width: 25px;
+		transform: translateX(-12.5px) rotateX(-90deg) rotateY(-45deg);
+	}
+}
+
+.card .bar:after {
+	display: block;
+	content: "";
+	height: 100%;
+	width: 15px;
+	position: absolute;
+	top: 0;
+	right: -15px;
+	background-color: grey;
+	transform: rotateY(90deg);
+	transform-origin: 0% 50%;
+	background: linear-gradient(to bottom, #feffff 0%, #85d7f7 0%, #4c8596 100%);
+}
+
+@media (min-height: 600px) {
+	.card .bar:after {
+		width: 25px;
+		right: -25px;
+	}
+}
+
+.card .bar:before {
+	font-family: "Oxygen", sans-serif;
+	display: block;
+	content: "";
+	height: 15px;
+	width: 15px;
+	position: absolute;
+	top: -15px;
+	left: 0;
+	background-color: white;
+	transform: rotateX(90deg);
+	transform-origin: 0% 100%;
+	color: white;
+	text-align: center;
+	font-size: 10px;
+	line-height: 14px;
+	padding: 0;
+	transition: color 0.3s ease-in-out;
+}
+
+@media (min-height: 600px) {
+	.card .bar:before {
+		width: 25px;
+		height: 25px;
+		top: -25px;
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+.card .bar.bar1:before {
+	content: "M";
+}
+
+.card .bar.bar2:before {
+	content: "T";
+}
+
+.card .bar.bar3:before {
+	content: "W";
+}
+
+.card .bar.bar4:before {
+	content: "T";
+}
+
+.card .bar.bar5:before {
+	content: "F";
+}
+
+.card .bar.bar6:before {
+	content: "S";
+}
+
+.card .bar.bar7:before {
+	content: "S";
+}
+
+.card .bar span {
+	font-family: "Oxygen", sans-serif;
+	position: absolute;
+	transform: rotateZ(-90deg);
+	border-radius: 2px;
+	transform-origin: 0% 100%;
+	top: 20px;
+	white-space: nowrap;
+	text-align: right;
+	left: 18px;
+	padding: 5px;
+	color: black;
+	font-size: 10px;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+@media (min-height: 600px) {
+	.card .bar span {
+		top: 25px;
+		left: 25px;
+		font-size: 13px;
+	}
+}
+
+.details .card {
+	transform: rotateX(60deg) translateY(150px);
+	box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.75);
+}
+
+.details .card .chart {
+	transform: translateZ(40px) translatey(50px);
+}
+
+.details .card .bar {
+	transform: translateX(-7.5px) rotateX(-90deg) rotateY(-25deg);
+}
+
+@media (min-height: 600px) {
+	.details .card .bar {
+		transform: translateX(-12.5px) rotateX(-90deg) rotateY(-25deg);
+	}
+}
+
+.details .card .bar.bar1 {
+	height: 150px;
+	transition-delay: 0.3s;
+	margin-top: -150px;
+}
+
+.details .card .bar.bar2 {
+	height: 75px;
+	transition-delay: 0.2s;
+	margin-top: -75px;
+}
+
+.details .card .bar.bar3 {
+	height: 112.5px;
+	transition-delay: 0.1s;
+	margin-top: -112.5px;
+}
+
+.details .card .bar.bar4 {
+	height: 180px;
+	transition-delay: 0s;
+	margin-top: -180px;
+}
+
+.details .card .bar.bar5 {
+	height: 52.5px;
+	transition-delay: 0.1s;
+	margin-top: -52.5px;
+}
+
+.details .card .bar.bar6 {
+	height: 52.5px;
+	transition-delay: 0.2s;
+	margin-top: -52.5px;
+}
+
+.details .card .bar.bar7 {
+	height: 75px;
+	transition-delay: 0.3s;
+	margin-top: -75px;
+}
+
+.details .card .bar span {
+	opacity: 1;
+	transition-delay: 0.3s;
+}
+
+.details .card .bar:before {
+	color: black;
+}
+
+.details .card .photo {
+	transform: translateZ(20px);
+}
+
+.details .card .photo:after {
+	background-color: rgba(0, 50, 100, 0.8);
+}
+
+.details .card h2 {
+	opacity: 0;
+	transform: translateZ(40px) translateY(-100px);
+}
+
+.details .card p {
+	opacity: 0;
+	transform: translateZ(40px) translateY(-80px);
+}
+
+.details .card h3 {
+	transform: translateZ(60px) translateY(100px);
+}
+
+.background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: linear-gradient(120deg, rgba(50, 150, 100, 0.4), rgba(0, 0, 100, 0));
+	;
+}
+
+.background:before, .background:after {
+	position: absolute;
+	content: " ";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(0deg, rgba(0, 0, 200, 0.4), rgba(0, 0, 200, 0));
+}
+
+.background:after {
+	background: linear-gradient(240deg, rgba(150, 50, 50, 0.4), rgba(0, 0, 200, 0));
+}
+
+.info {
+	font-family: "Oxygen", sans-serif;
+	color: white;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+.reflection-container {
+	width: 100%;
+	z-index: 1;
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.reflection-container:before {
+	
+	color: #fff;
+	position: absolute;
+	left: -1rem;
+	top: 50%;
+	font-size: 6vh;
+	transform: translateX(-100%) translateY(-50%);
+}
+
+.reflection-container .reflection-content {
+	height: 80vh;
+	width: 80vh;
+	background: #000 url(https://unsplash.it/800/800/?random);
+	background-size: cover;
+	background-position: center;
+	transform: rotateX(0) rotateY(0);
+	pointer-events: none;
+	transition: 100ms linear transform;
+	overflow: hidden;
+}
+
+.reflection-container .reflection-content:before {
+	content: '';
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	left: -50%;
+	top: -50%;
+	background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.reflection-container .reflection-grid-cell {
+	position: absolute;
+	z-index: 1;
+	width: 10%;
+	height: 10%;
+}
+
+.reflection-container .reflection-grid-cell-1 {
+	top: 0%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-1:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-1:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-2 {
+	top: 0%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-2:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-2:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-3 {
+	top: 0%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-3:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-3:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-4 {
+	top: 0%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-4:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-4:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-5 {
+	top: 0%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-5:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-5:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-6 {
+	top: 0%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-6:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-6:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-7 {
+	top: 0%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-7:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-7:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-8 {
+	top: 0%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-8:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-8:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-9 {
+	top: 0%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-9:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-9:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-10 {
+	top: 0%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-10:hover ~ .reflection-content {
+	transform: rotateX(20deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-10:hover ~ .reflection-content:before {
+	transform: translateY(20%);
+}
+
+.reflection-container .reflection-grid-cell-11 {
+	top: 10%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-11:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-11:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-12 {
+	top: 10%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-12:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-12:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-13 {
+	top: 10%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-13:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-13:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-14 {
+	top: 10%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-14:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-14:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-15 {
+	top: 10%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-15:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-15:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-16 {
+	top: 10%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-16:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-16:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-17 {
+	top: 10%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-17:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-17:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-18 {
+	top: 10%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-18:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-18:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-19 {
+	top: 10%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-19:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-19:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-20 {
+	top: 10%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-20:hover ~ .reflection-content {
+	transform: rotateX(15deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-20:hover ~ .reflection-content:before {
+	transform: translateY(15%);
+}
+
+.reflection-container .reflection-grid-cell-21 {
+	top: 20%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-21:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-21:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-22 {
+	top: 20%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-22:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-22:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-23 {
+	top: 20%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-23:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-23:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-24 {
+	top: 20%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-24:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-24:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-25 {
+	top: 20%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-25:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-25:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-26 {
+	top: 20%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-26:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-26:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-27 {
+	top: 20%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-27:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-27:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-28 {
+	top: 20%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-28:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-28:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-29 {
+	top: 20%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-29:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-29:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-30 {
+	top: 20%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-30:hover ~ .reflection-content {
+	transform: rotateX(10deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-30:hover ~ .reflection-content:before {
+	transform: translateY(10%);
+}
+
+.reflection-container .reflection-grid-cell-31 {
+	top: 30%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-31:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-31:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-32 {
+	top: 30%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-32:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-32:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-33 {
+	top: 30%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-33:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-33:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-34 {
+	top: 30%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-34:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-34:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-35 {
+	top: 30%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-35:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-35:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-36 {
+	top: 30%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-36:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-36:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-37 {
+	top: 30%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-37:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-37:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-38 {
+	top: 30%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-38:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-38:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-39 {
+	top: 30%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-39:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-39:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-40 {
+	top: 30%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-40:hover ~ .reflection-content {
+	transform: rotateX(5deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-40:hover ~ .reflection-content:before {
+	transform: translateY(5%);
+}
+
+.reflection-container .reflection-grid-cell-41 {
+	top: 40%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-41:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-41:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-42 {
+	top: 40%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-42:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-42:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-43 {
+	top: 40%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-43:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-43:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-44 {
+	top: 40%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-44:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-44:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-45 {
+	top: 40%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-45:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-45:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-46 {
+	top: 40%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-46:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-46:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-47 {
+	top: 40%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-47:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-47:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-48 {
+	top: 40%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-48:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-48:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-49 {
+	top: 40%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-49:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-49:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-50 {
+	top: 40%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-50:hover ~ .reflection-content {
+	transform: rotateX(0deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-50:hover ~ .reflection-content:before {
+	transform: translateY(0%);
+}
+
+.reflection-container .reflection-grid-cell-51 {
+	top: 50%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-51:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-51:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-52 {
+	top: 50%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-52:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-52:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-53 {
+	top: 50%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-53:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-53:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-54 {
+	top: 50%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-54:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-54:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-55 {
+	top: 50%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-55:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-55:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-56 {
+	top: 50%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-56:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-56:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-57 {
+	top: 50%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-57:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-57:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-58 {
+	top: 50%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-58:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-58:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-59 {
+	top: 50%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-59:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-59:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-60 {
+	top: 50%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-60:hover ~ .reflection-content {
+	transform: rotateX(-5deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-60:hover ~ .reflection-content:before {
+	transform: translateY(-5%);
+}
+
+.reflection-container .reflection-grid-cell-61 {
+	top: 60%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-61:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-61:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-62 {
+	top: 60%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-62:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-62:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-63 {
+	top: 60%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-63:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-63:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-64 {
+	top: 60%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-64:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-64:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-65 {
+	top: 60%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-65:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-65:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-66 {
+	top: 60%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-66:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-66:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-67 {
+	top: 60%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-67:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-67:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-68 {
+	top: 60%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-68:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-68:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-69 {
+	top: 60%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-69:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-69:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-70 {
+	top: 60%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-70:hover ~ .reflection-content {
+	transform: rotateX(-10deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-70:hover ~ .reflection-content:before {
+	transform: translateY(-10%);
+}
+
+.reflection-container .reflection-grid-cell-71 {
+	top: 70%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-71:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-71:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-72 {
+	top: 70%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-72:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-72:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-73 {
+	top: 70%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-73:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-73:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-74 {
+	top: 70%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-74:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-74:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-75 {
+	top: 70%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-75:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-75:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-76 {
+	top: 70%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-76:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-76:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-77 {
+	top: 70%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-77:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-77:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-78 {
+	top: 70%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-78:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-78:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-79 {
+	top: 70%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-79:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-79:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-80 {
+	top: 70%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-80:hover ~ .reflection-content {
+	transform: rotateX(-15deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-80:hover ~ .reflection-content:before {
+	transform: translateY(-15%);
+}
+
+.reflection-container .reflection-grid-cell-81 {
+	top: 80%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-81:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-81:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-82 {
+	top: 80%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-82:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-82:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-83 {
+	top: 80%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-83:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-83:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-84 {
+	top: 80%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-84:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-84:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-85 {
+	top: 80%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-85:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-85:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-86 {
+	top: 80%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-86:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-86:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-87 {
+	top: 80%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-87:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-87:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-88 {
+	top: 80%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-88:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-88:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-89 {
+	top: 80%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-89:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-89:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-90 {
+	top: 80%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-90:hover ~ .reflection-content {
+	transform: rotateX(-20deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-90:hover ~ .reflection-content:before {
+	transform: translateY(-20%);
+}
+
+.reflection-container .reflection-grid-cell-91 {
+	top: 90%;
+	left: 0%;
+}
+
+.reflection-container .reflection-grid-cell-91:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(-20deg);
+}
+
+.reflection-container .reflection-grid-cell-91:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-92 {
+	top: 90%;
+	left: 10%;
+}
+
+.reflection-container .reflection-grid-cell-92:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(-15deg);
+}
+
+.reflection-container .reflection-grid-cell-92:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-93 {
+	top: 90%;
+	left: 20%;
+}
+
+.reflection-container .reflection-grid-cell-93:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(-10deg);
+}
+
+.reflection-container .reflection-grid-cell-93:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-94 {
+	top: 90%;
+	left: 30%;
+}
+
+.reflection-container .reflection-grid-cell-94:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(-5deg);
+}
+
+.reflection-container .reflection-grid-cell-94:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-95 {
+	top: 90%;
+	left: 40%;
+}
+
+.reflection-container .reflection-grid-cell-95:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(0deg);
+}
+
+.reflection-container .reflection-grid-cell-95:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-96 {
+	top: 90%;
+	left: 50%;
+}
+
+.reflection-container .reflection-grid-cell-96:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(5deg);
+}
+
+.reflection-container .reflection-grid-cell-96:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-97 {
+	top: 90%;
+	left: 60%;
+}
+
+.reflection-container .reflection-grid-cell-97:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(10deg);
+}
+
+.reflection-container .reflection-grid-cell-97:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-98 {
+	top: 90%;
+	left: 70%;
+}
+
+.reflection-container .reflection-grid-cell-98:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(15deg);
+}
+
+.reflection-container .reflection-grid-cell-98:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-99 {
+	top: 90%;
+	left: 80%;
+}
+
+.reflection-container .reflection-grid-cell-99:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(20deg);
+}
+
+.reflection-container .reflection-grid-cell-99:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.reflection-container .reflection-grid-cell-100 {
+	top: 90%;
+	left: 90%;
+}
+
+.reflection-container .reflection-grid-cell-100:hover ~ .reflection-content {
+	transform: rotateX(-25deg) rotateY(25deg);
+}
+
+.reflection-container .reflection-grid-cell-100:hover ~ .reflection-content:before {
+	transform: translateY(-25%);
+}
+
+.box{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 10px;
+    position:relative;
+    z-index: 0;
+    width:200px;
+    height:200px;
+    transform-style:preserve-3d;
+    animation:animate 20s linear infinite;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%
+    {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-origin:center;
+    transform-style:preserve-3d;
+    transform:rotateY(calc(var(--i)*45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #004);
+
+
+}

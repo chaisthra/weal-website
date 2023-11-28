@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link href="style.css" rel="stylesheet"/>
+	<style>
+	body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+		background:linear-gradient(to right, #056B93, #00A859);
+}
+
+fieldset {
+    background-color: #fff;
+	opacity:80%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+
+legend {
+    font-size: 24px;
+    color: #a20272;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #a20272;
+    box-shadow: 0 0 8px rgba(162, 2, 114, 0.2);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #028486;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #1d00c4;
+    transform: scale(1.05);
+}
+
+input[type="file"] {
+    border: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+}
+
+.error {
+    border-color: red;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label,
+.checkbox-group label {
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    width: 300%; /* 100% * number of images */
+    animation: slide 15s infinite linear;
+}
+
+.carousel-images img {
+    width: 33.3333%; /* 100 / number of images */
+    flex: 0 0 auto;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-33.3333%); /* Move to the second image */
+    }
+    66% {
+        transform: translateX(-66.6666%); /* Move to the third image */
+    }
+    100% {
+        transform: translateX(-100%); /* Move back to the first image */
+    }
+}
+</style>
+</head>
+<body>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="../imgs/1.png" alt="Image 1">
+            <img src="../imgs/2.png" alt="Image 2">
+            <img src="../imgs/3.png" alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>Sign up for our website</legend>
+        <form action="Experiment1.html" method="post" name="registrationForm" onsubmit="return validateForm()">
+            <!-- Form fields -->
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+            <span class="error-message" id="errorFirstName"></span><br/><br/>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+            <span class="error-message" id="errorLastName"></span><br/><br/>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required placeholder="Enter your email address">
+            <span class="error-message" id="errorEmail"></span><br/><br/>
+
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" required placeholder="Create a secure password">
+            <span class="error-message" id="errorPassword"></span><br/><br/>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+            <span class="error-message" id="errorConfirmPassword"></span><br/><br/>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required placeholder="Enter your phone number"><br/><br/>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob"/><br/><br/>
+            
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="female" id="gender_female"/>
+            <label for="gender_female">Female</label>
+            <input type="radio" name="gender" value="male" id="gender_male"/>
+            <label for="gender_male">Male</label>
+            <input type="radio" name="gender" value="other" id="gender_other"/>
+            <label for="gender_other">Other</label><br/><br/>
+
+            <label>Interests:</label>
+            <input type="checkbox" name="interests" value="agriculture" id="interest_agriculture" checked/>
+            <label for="interest_agriculture">Agriculture</label>
+            <input type="checkbox" name="interests" value="technology" id="interest_technology"/>
+            <label for="interest_technology">Technology</label>
+            <input type="checkbox" name="interests" value="vr" id="interest_vr"/>
+            <label for="interest_vr">Virtual Reality</label><br/><br/>
+            
+            <label for="experience_level">Experience Level:</label>
+            <select id="experience_level">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select><br/><br/>
+
+            <label for="address">Address:</label>
+            <textarea id="address" rows="4" cols="40" placeholder="Enter your address"></textarea><br/>
+            
+            <label for="file_upload">Profile Picture:</label>
+            <input type="file" id="file_upload"/><br/>
+
+            <label>Data filled:</label><meter value="20" max="40"></meter>
+
+            <input type="submit" value="Register"/> 
+            <input type="reset" value="Reset"/>
+        </form>
+    </fieldset>
+
+    <script>
+        // JavaScript validation script here
+    </script>
+</body>
+</html>
