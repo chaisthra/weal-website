@@ -1,39 +1,40 @@
-from flask import Flask, render_template, request, jsonify
-from joblib import load
-import pandas as pd
+from flask import Flask, request, render_template, jsonify
+from keras.models import load_model
+from keras.preprocessing import image
+from keras.applications.vgg16 import preprocess_input
+import numpy as np
+import os
+from werkzeug.utils import secure_filename
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
+model = load_model('vgg16-improved-weights.h5')  # Load the model
+labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']  # Define class labels
 
-# Load the trained model and vectorizer
-model = load('trained_model.joblib')
-vec = load('vectorizer.joblib')
-
-# Load the datasets
-df_precaution = pd.read_csv('disease_precaution.csv')
-df_description = pd.read_csv('disease_description.csv')
-df_specialist = pd.read_csv('Doctor_Versus_Disease.csv', encoding='latin1', names=['Disease','Specialist'])
-
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html')  # HTML form to upload image
 
 @app.route('/predict', methods=['POST'])
-def predict():
-    symptoms = request.form['symptoms']
-    transformed_symptoms = vec.transform([symptoms])
-    predicted_disease = model.predict(transformed_symptoms)
+def upload():
+    if request.method == 'POST':
+        f = request.files['file']
+        basepath = os.path.dirname(__file__)
+        upload_folder = os.path.join(basepath, 'uploads')
+        if not os.path.exists(upload_folder):
+            os.makedirs(upload_folder)  # Ensure the directory exists
+        file_path = os.path.join(upload_folder, secure_filename(f.filename))
+        f.save(file_path)
+        predicted_class = model_predict(file_path, model)
+        return render_template('result.html', result=predicted_class)
 
-    # Fetch doctor recommendation, description, and precautions based on the predicted disease
-    result = pd.DataFrame({'Disease': predicted_disease})
-    result = result.merge(df_specialist, on="Disease", how="left")
-    result = result.merge(df_precaution, on="Disease", how="left")
-    result = result.merge(df_description, on="Disease", how="left")
-
-    disease = result['Disease'].iloc[0]
-    specialist = result['Specialist'].iloc[0]
-    precaution = result['Precaution'].iloc[0] if 'Precaution' in result.columns else "N/A"
-    description = result.get('Symptom_Description', ['N/A'])[0]
-    return render_template('result.html', disease=disease, specialist=specialist, precaution=precaution, description=description)
+def model_predict(img_path, model):
+    img = image.load_img(img_path, target_size=(150, 150))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    preds = model.predict(x)
+    class_idx = np.argmax(preds, axis=1)[0]  # Get the index of the max class score
+    return labels[class_idx]  # Return the label corresponding to the predicted index
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8000)  # Optionally change the port
